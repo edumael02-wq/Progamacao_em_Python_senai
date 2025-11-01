@@ -5,9 +5,11 @@ ecommerce = {
              'IPHONE':3000.0
         },
 
+
         'roupas':{
             'camiseta':150.0,
             'calça':250.0
+
 
         },
         'acesorios':{
@@ -16,16 +18,25 @@ ecommerce = {
         }
 
 
+
 }
 
 
 
+
 carrinho = []
-deseja = input('deseja comprar? s / n?')
+valores  =  [] # criar a lista valores
+
+
+deseja = input('deseja comprar - sim / não ?')
 while deseja == 'sim':
-    p = input('Produto: ')
-    carrinho.append(p)
+    secao = input('Secao - celulares roupas ou acesorios')
+    p1 = input(f'Produto: {ecommerce[secao]}')
+    carrinho.append(p1) # adionamos o produto
+    valores.append(ecommerce[secao][p1])
     print(carrinho)
-    deseja = input('Deseja comprar? s / n?')
+    total = sum(valores)
+    print('R$', total)
+    deseja = input('Deseja continuar   - sim / não?')
 else:
     print('Obrigada volte sempre!')   
